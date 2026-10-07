@@ -108,7 +108,7 @@ impl ClickHouse {
     ///
     /// # Errors
     ///
-    /// Returns [`ClickHouseError::Database`] with [`ErrorKind::NotFound`] if the query
+    /// Returns [`ClickHouseError::Database`] with [`ErrorKind::NotFound`](crate::ErrorKind::NotFound) if the query
     /// returns no row, or another [`ClickHouseError`] if the query fails or times out.
     pub async fn fetch_one<T>(&self, sql: &str) -> Result<T, ClickHouseError>
     where

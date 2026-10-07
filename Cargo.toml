@@ -17,7 +17,7 @@ tls = ["clickhouse/rustls-tls"]
 
 [dependencies]
 # No default features: the host app selects the Autumn features.
-autumn-web = { version = ">=0.7, <0.8", default-features = false }
+autumn-web = { version = ">=0.8, <0.9", default-features = false }
 axum = { version = "0.8", default-features = false }
 # No default features: the plugin asks for no compression. `tls` adds HTTPS.
 clickhouse = { version = "0.14", default-features = false, features = ["inserter"] }

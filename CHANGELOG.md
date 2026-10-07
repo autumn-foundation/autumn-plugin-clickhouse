@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Require `autumn-web` 0.8 (`>=0.8, <0.9`).
+- Remove an unknown clippy lint name from the `FromRequestParts` impl.
+
 ## 0.1.0 — 2026-09-29
 
 First release.
