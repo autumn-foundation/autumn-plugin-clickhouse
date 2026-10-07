@@ -197,7 +197,6 @@ where
 
     // The `FromRequestParts` trait requires an async signature, but extraction
     // is synchronous (state lookup only); there is nothing to await.
-    #[allow(clippy::unused_async_trait_impl)]
     async fn from_request_parts(
         _parts: &mut http::request::Parts,
         state: &S,
