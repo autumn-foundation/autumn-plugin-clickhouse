@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+- Support `autumn-web` 0.9. The plugin now needs `autumn-web` 0.9.
+
 - Require `autumn-web` 0.8 (`>=0.8, <0.9`).
 - Remove an unknown clippy lint name from the `FromRequestParts` impl.
 
