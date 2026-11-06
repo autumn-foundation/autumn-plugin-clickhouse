@@ -11,11 +11,11 @@ over HTTP. It gives Autumn handlers typed `SELECT` queries, batch inserts throug
 
 Add the plugin to the app, then take the `ClickHouse` extractor in a handler:
 
-```rust
+```rust,no_run
 use autumn_plugin_clickhouse::{ClickHouse, ClickHousePlugin, ClickHouseResultExt as _};
 use autumn_web::prelude::*;
 
-#[derive(clickhouse::Row, serde::Deserialize)]
+#[derive(clickhouse::Row, serde::Deserialize, serde::Serialize)]
 struct EventCount {
     name: String,
     count: u64,
@@ -30,11 +30,14 @@ async fn event_counts(db: ClickHouse) -> AutumnResult<Json<Vec<EventCount>>> {
     Ok(Json(rows))
 }
 
-autumn_web::app()
-    .plugin(ClickHousePlugin::new())
-    .routes(routes![event_counts])
-    .run()
-    .await;
+#[autumn_web::main]
+async fn main() {
+    autumn_web::app()
+        .plugin(ClickHousePlugin::new())
+        .routes(routes![event_counts])
+        .run()
+        .await;
+}
 ```
 
 Configure it in `autumn.toml`:

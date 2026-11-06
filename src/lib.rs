@@ -70,3 +70,8 @@ pub use error::{ClickHouseError, ClickHouseResultExt, ErrorKind};
 pub use metrics::Metrics;
 pub use migrate::{Migration, migrate};
 pub use plugin::{ClickHousePlugin, PLUGIN_NAME};
+
+/// Compiles the Rust snippets of the README as doctests.
+#[cfg(doctest)]
+#[doc = include_str!("../README.md")]
+pub struct ReadmeDoctests;

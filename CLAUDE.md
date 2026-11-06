@@ -32,6 +32,8 @@ Tests use the `clickhouse` mock server (`test-util` dev-dependency). No live Cli
 
 ## Rules
 
+- README Rust snippets are doctests. Make them compile; use `no_run`, not `ignore`.
+  `tests/doc_snippets.rs` checks the TOML snippets and the version pins in the docs.
 - House lints: `unsafe_code = "forbid"`, clippy pedantic + nursery warn, `unwrap_used` /
   `expect_used` / `panic` / `todo` / `unimplemented` deny in production code.
   Tests may use them (`allow-unwrap-in-tests` etc. in `clippy.toml`).
