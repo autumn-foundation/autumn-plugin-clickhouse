@@ -88,8 +88,8 @@ cargo test --locked --all-targets --all-features
 
 ## Building
 
-The crate declares `rust-version = "1.88"`, but the `clickhouse` 0.14 dependency needs
-rustc 1.89 or newer to compile — use a current stable toolchain.
+The crate needs Rust 1.97 or newer (`rust-version = "1.97"`), the MSRV of
+`autumn-web` 0.10.
 
 ## Known issues
 
