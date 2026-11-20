@@ -92,7 +92,7 @@ cargo test --locked --all-targets --all-features
 ## Building
 
 The crate needs Rust 1.97 or newer (`rust-version = "1.97"`), the MSRV of
-`autumn-web` 0.10.
+`autumn-web` 0.11.
 
 ## Known issues
 
